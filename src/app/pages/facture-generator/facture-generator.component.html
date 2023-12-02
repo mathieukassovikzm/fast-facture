@@ -1,0 +1,17 @@
+<kendo-pdf-export #pdf>
+  <section>
+    <h1>{{ user.FamillyName | uppercase }} {{ user.Name }}</h1>
+    <h2>{{ user.Title }}</h2>
+    <p>{{ user.Address }}</p>
+    <p>{{ user.PostCode }} {{ user.City | uppercase }}</p>
+    <p>Email: {{ user.Email }}</p>
+    <p>N° de SIRET: {{ user.NumSiret }}</p>
+    @if (!!user.NumTva) {
+    <p>N° de TVA intra-communautaire: {{ user.NumTva }}</p>
+    }
+  </section>
+</kendo-pdf-export>
+
+<button kendoButton (click)="generatePDF()">
+  Save As PDF...
+</button>
